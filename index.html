@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Ronda</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Biblioteca HTML5 QR Code -->
     <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
     <div id="app">
         <h1>QR Code Ronda</h1>
         <div id="reader" style="width: 300px; margin: auto;"></div> <!-- Área de escaneamento -->
+        <div id="status">Aguardando leitura do QR code...</div> <!-- Status da câmera -->
         <div id="timer-container">
             <div id="timer">10</div>
         </div>
