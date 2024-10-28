@@ -1,21 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #333;
-    color: #fff;
+    padding: 20px;
 }
 
-#app {
+h1 {
     text-align: center;
 }
 
-#timer-container {
-    margin-top: 20px;
-    font-size: 5em;
-    font-weight: bold;
-    color: green;
+#qr-generator, #qr-scanner {
+    margin-bottom: 20px;
+    text-align: center;
 }
