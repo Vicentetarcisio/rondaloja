@@ -1,3 +1,4 @@
+/* Estilo básico */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,46 +6,68 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Coloca os elementos em coluna */
+    flex-direction: column;
     height: 100vh;
     background-color: #f0f0f0;
 }
 
 #app {
     text-align: center;
-    width: 90%; /* Largura do aplicativo em dispositivos móveis */
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 500px; /* Limita a largura em telas maiores */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #timer-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px;
     width: 100%;
     margin-top: 20px;
 }
 
 #timer {
-    font-size: 8vw; /* Tamanho responsivo baseado na largura da tela */
+    font-size: 10vw; /* Responsivo baseado na largura da tela */
     font-weight: bold;
-    color: green; /* Cor inicial verde */
+    color: green;
     text-align: center;
 }
 
 video {
     margin-top: 10px;
-    width: 100%; /* Video ocupa toda a largura */
-    max-width: 300px; /* Máximo para evitar que fique muito grande */
+    width: 100%; /* O vídeo ocupa toda a largura da tela */
+    max-width: 300px; /* Limite para telas maiores */
 }
 
 button {
-    font-size: 4vw; /* Tamanho responsivo dos botões */
-    padding: 10px 20px; /* Padding para botões */
-    margin: 10px 0; /* Espaçamento entre os botões */
-    cursor: pointer; /* Indica que é clicável */
+    font-size: 4vw;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 80%; /* Botões mais largos para facilitar o toque */
+    max-width: 300px; /* Limite para telas maiores */
 }
 
 textarea {
-    width: 100%; /* Texto ocupa toda a largura */
-    max-width: 400px; /* Máximo para o textarea */
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 600px) {
+    #timer {
+        font-size: 12vw; /* Aumenta o tamanho da fonte do timer */
+    }
+
+    button {
+        font-size: 5vw; /* Ajusta o tamanho dos botões */
+        padding: 8px 15px;
+    }
+
+    textarea {
+        font-size: 4vw;
+        height: 150px; /* Reduz a altura do textarea para caber na tela */
+    }
 }
