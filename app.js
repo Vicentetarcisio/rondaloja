@@ -32,9 +32,11 @@ function startCountdown() {
     }, 1000);
 }
 
-// Função para simular o escaneamento do QR Code
-function onQRCodeScanned() {
-    // Iniciar a contagem regressiva no primeiro escaneamento
+// Função chamada ao escanear um QR Code com sucesso
+function onQRCodeScanned(decodedText) {
+    console.log(`QR Code escaneado: ${decodedText}`);
+
+    // Iniciar a contagem regressiva no primeiro escaneamento ou reiniciar em cada escaneamento
     if (!countingDown) {
         countingDown = true;
         startCountdown();
@@ -44,5 +46,19 @@ function onQRCodeScanned() {
     }
 }
 
-// Botão para simular o escaneamento de QR Code
-document.getElementById("scanButton").addEventListener("click", onQRCodeScanned);
+// Configurar o scanner HTML5 QR Code
+function startQRScanner() {
+    const html5QrCode = new Html5Qrcode("reader"); // Div onde a câmera será exibida
+    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+
+    html5QrCode.start(
+        { facingMode: "environment" }, // Usa a câmera traseira para dispositivos móveis
+        config,
+        onQRCodeScanned
+    ).catch(err => {
+        console.error("Erro ao iniciar o escaneamento de QR Code", err);
+    });
+}
+
+// Iniciar o scanner ao carregar a página
+document.addEventListener("DOMContentLoaded", startQRScanner);

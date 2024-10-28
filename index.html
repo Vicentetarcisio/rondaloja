@@ -1,47 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App de Ronda</title>
+    <title>QR Code Ronda</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Biblioteca QRCode.js para gerar QR Codes -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <!-- Biblioteca ZXing para escanear QR Codes -->
-    <script src="https://unpkg.com/@zxing/library@latest"></script>
+    <!-- Biblioteca HTML5 QR Code -->
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
-
     <div id="app">
-        <h1>Aplicativo de Ronda</h1>
-
-        <!-- Geração de Múltiplos QR Codes -->
-        <h3>Gerar QR Codes</h3>
-        <input type="text" id="qrText" placeholder="Texto do QR Code (Ex: Ponto de Ronda)">
-        <input type="number" id="qrTime" placeholder="Tempo (segundos)" min="1" value="10">
-        <button id="generateQR">Gerar QR Code</button>
-        <br><br>
-
-        <!-- Lista de QR Codes Gerados -->
-        <div id="qrcodeList"></div> <!-- QR Codes serão exibidos aqui -->
-
-        <!-- Escaneamento de QR Code -->
-        <h3>Escanear QR Code</h3>
-        <button id="startScan">Iniciar Escaneamento</button>
-        <video id="preview" width="300" height="300" style="border: 1px solid black;"></video>
-
-        <!-- Contagem Regressiva Centralizada -->
+        <h1>QR Code Ronda</h1>
+        <div id="reader" style="width: 300px; margin: auto;"></div> <!-- Área de escaneamento -->
         <div id="timer-container">
-            <p id="timer">00:10</p> <!-- Contagem regressiva grande e centralizada -->
+            <div id="timer">10</div>
         </div>
-
-        <button id="scanButton">Escanear QR Code</button>
-
-        <!-- Logs de Monitorização -->
-        <h3>Logs</h3>
-        <textarea id="logs" rows="10" cols="50" readonly></textarea>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
