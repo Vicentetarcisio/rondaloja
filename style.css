@@ -5,7 +5,8 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #333;
+    color: #fff;
 }
 
 #app {
@@ -14,7 +15,7 @@ body {
 
 #timer-container {
     margin-top: 20px;
-    font-size: 2em;
+    font-size: 5em;
     font-weight: bold;
     color: green;
 }
