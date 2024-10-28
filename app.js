@@ -1,4 +1,4 @@
-let countdownTime = 10; // Tempo inicial da contagem regressiva
+let countdownTime = 10; // Tempo inicial da contagem regressiva em segundos
 let timerElement = document.getElementById("timer");
 let statusElement = document.getElementById("status");
 let intervalId = null;
@@ -9,7 +9,7 @@ function startCountdown() {
     timerElement.style.color = "green";
     timerElement.innerText = currentTime;
 
-    if (intervalId) clearInterval(intervalId); // Limpa qualquer contagem anterior
+    if (intervalId) clearInterval(intervalId); // Limpa a contagem anterior para evitar múltiplos intervalos
 
     intervalId = setInterval(() => {
         currentTime--;
@@ -19,6 +19,7 @@ function startCountdown() {
             timerElement.innerText = currentTime;
             timerElement.style.color = currentTime <= 3 ? "red" : currentTime <= 6 ? "yellow" : "green";
         } else {
+            // Exibe o aviso de atraso se a contagem chegar a zero
             timerElement.innerText = `${currentTime} (Atraso)`;
             timerElement.style.color = "red";
         }
@@ -30,8 +31,7 @@ function onQRCodeScanned(decodedText) {
     console.log(`QR Code escaneado: ${decodedText}`);
     statusElement.innerText = "QR Code lido com sucesso! Iniciando contagem...";
 
-    // Inicia ou reinicia a contagem regressiva a cada escaneamento
-    startCountdown();
+    startCountdown(); // Inicia a contagem regressiva após cada escaneamento
 }
 
 // Função para configurar e iniciar o scanner de QR code
