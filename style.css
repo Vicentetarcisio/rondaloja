@@ -13,8 +13,8 @@ body {
 
 #app {
     text-align: center;
-    width: 100%; /* Ocupa toda a largura */
-    max-width: 500px; /* Limita a largura em telas maiores */
+    width: 100%;
+    max-width: 400px; /* Define a largura máxima específica para dispositivos de 6.3" */
     padding: 10px;
     box-sizing: border-box;
 }
@@ -29,7 +29,7 @@ body {
 }
 
 #timer {
-    font-size: 10vw; /* Responsivo baseado na largura da tela */
+    font-size: 14vw; /* Ajusta o tamanho do texto para a largura do dispositivo */
     font-weight: bold;
     color: green;
     text-align: center;
@@ -37,37 +37,48 @@ body {
 
 video {
     margin-top: 10px;
-    width: 100%; /* O vídeo ocupa toda a largura da tela */
-    max-width: 300px; /* Limite para telas maiores */
+    width: 100%;
+    max-width: 350px; /* Limita o tamanho do vídeo */
 }
 
 button {
-    font-size: 4vw;
+    font-size: 4vw; /* Ajusta o tamanho do texto nos botões */
     padding: 10px 20px;
     margin: 10px 0;
     cursor: pointer;
-    width: 80%; /* Botões mais largos para facilitar o toque */
-    max-width: 300px; /* Limite para telas maiores */
+    width: 85%; /* Aumenta a largura dos botões para facilitar o toque */
+    max-width: 350px;
 }
 
 textarea {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
+    font-size: 4vw;
+    height: 120px; /* Ajusta altura para uma tela de 6,3 polegadas */
 }
 
-/* Estilos para dispositivos móveis */
-@media (max-width: 600px) {
+/* Estilos para dispositivos móveis de 6.3" e menores */
+@media (max-width: 414px) {
     #timer {
-        font-size: 12vw; /* Aumenta o tamanho da fonte do timer */
+        font-size: 16vw; /* Aumenta o tamanho do texto do timer */
     }
 
     button {
-        font-size: 5vw; /* Ajusta o tamanho dos botões */
+        font-size: 5vw;
         padding: 8px 15px;
     }
 
     textarea {
         font-size: 4vw;
-        height: 150px; /* Reduz a altura do textarea para caber na tela */
+        height: 120px;
+    }
+
+    /* Margens e espaçamentos */
+    #app {
+        padding: 5px;
+    }
+
+    #timer-container {
+        margin-top: 15px;
     }
 }
